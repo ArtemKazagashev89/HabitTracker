@@ -20,6 +20,7 @@ class UserManager(BaseUserManager):
 
 
 class User(AbstractBaseUser, PermissionsMixin):
+    username = None
     email = models.EmailField(unique=True, verbose_name="Почта")
     phone = models.CharField(max_length=35, blank=True, null=True, verbose_name="Телефон")
     city = models.CharField(max_length=50, blank=True, null=True, verbose_name="Город")
